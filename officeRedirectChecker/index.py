@@ -224,7 +224,7 @@ app = create_app()
 
 @app.route('/home')
 def home_page():
-    return render_template('office_checker')
+    return render_template('office_checker.html')
 
 @app.route('/checkemail',methods=['POST'])
 def checkemail():
