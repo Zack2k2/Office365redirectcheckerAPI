@@ -220,8 +220,11 @@ def create_app():
 
 app = create_app()
 #db = get_db("./customers.json")
-
 #db_query = tinydb.Query() 
+
+@app.route('/home')
+def home_page():
+    return render_template('office_checker')
 
 @app.route('/checkemail',methods=['POST'])
 def checkemail():
