@@ -65,11 +65,19 @@
       margin-top: 20px;
       color: #333333;
     }
+  p {
+    color: #444444;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Office 365 Redirect Checker</h1>
+    <p>This Flask application provides a simple and efficient way to verify if an email address is associated with Microsoft 365 and retrieve its organization-specific redirection link. It offers a user-friendly interface where users can input an email address to check if it belongs to a Microsoft 365 organization. Once verified, the application fetches the organization’s redirection link, which is helpful for identifying the specific login page associated with the Microsoft 365 account.</p>
     <p>Enter your email address to check its organization.</p>
     
     <input type="email" id="email" placeholder="Enter your email" required>
@@ -93,6 +101,7 @@
       .then(response => response.json())
       .then(data => {
         const redirectUrl = data[email];
+        console.log(redirectUrl);
         resultDiv.innerHTML = redirectUrl ? `<a href="${redirectUrl}" target="_blank">${redirectUrl}</a>` : 'No redirect URL found.';
       })
       .catch(error => {
