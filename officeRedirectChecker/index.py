@@ -224,6 +224,7 @@ app = create_app()
 
 @app.route('/home')
 def home_page():
+    #TODO rework the checker page 
     return render_template('office_checker.html')
 
 @app.route('/checkemail',methods=['POST'])
